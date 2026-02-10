@@ -22,6 +22,34 @@ public class GameLogic {
             System.out.println("- - - - - - - - - - - - - - -");
             System.out.println("- - - - - - - - - - - - - - -");
 
+            
+
+            boolean helpRules = true;
+            while (helpRules) {
+                theMessages.printHelp();
+                System.out.println("- - - - - - - - - - - - - - -");
+                System.out.println("Do you understand everything? (yes/no):");
+                String answer = myObj.nextLine();
+                String answer2 = answer.toLowerCase();
+
+                switch (answer2) {
+                    case "yes":
+                        helpRules = false;
+                        break;
+                    case "no":
+                        break;
+                    default:
+                        System.out.println("Please enter yes or no");
+                        answer2 = myObj.nextLine();
+                        break;
+                }
+                
+
+            }
+
+            
+            System.out.println("- - - - - - - - - - - - - - -");
+            System.out.println("- - - - - - - - - - - - - - -");
             System.out.println("Hello there!");
             System.out.println("What is your name hero?");
 
