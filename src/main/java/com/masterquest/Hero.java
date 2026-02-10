@@ -21,4 +21,16 @@ public class Hero {
         System.out.println("Your current health is: " + health);
     }
 
+
+    public void addHeroWeapon(Weapon theWeapon) {
+        weapons.add(theWeapon);
+    }
+
+    public void printAllHeroWeapons() {
+        for (Weapon theWeapon : weapons) {
+            theWeapon.printWeaponInfo();
+        }
+    }
+    
+
 }

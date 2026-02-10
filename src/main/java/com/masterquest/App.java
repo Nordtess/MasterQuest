@@ -1,6 +1,6 @@
 package com.masterquest;
 
-import java.util.Scanner;
+
 
 /**
  * Hello world!

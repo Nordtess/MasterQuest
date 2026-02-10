@@ -1,6 +1,6 @@
-com/masterquest/Hero.class
-com/masterquest/GameLogic.class
-com/masterquest/Weapon.class
-com/masterquest/App.class
-com/masterquest/Room.class
-com/masterquest/Key.class
+com\masterquest\Weapon.class
+com\masterquest\App.class
+com\masterquest\GameLogic.class
+com\masterquest\Room.class
+com\masterquest\Hero.class
+com\masterquest\Key.class

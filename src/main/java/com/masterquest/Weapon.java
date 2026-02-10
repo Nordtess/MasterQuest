@@ -12,7 +12,7 @@ public class Weapon {
         this.highestDamage = highestDamage;
     }
 
-    private void printWeaponInfo() {
+    public void printWeaponInfo() {
         System.out.println("You are wielding " + id + " with damage " + lowestDamage + " - " + highestDamage);
     }
 
