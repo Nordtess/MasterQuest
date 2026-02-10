@@ -9,6 +9,10 @@ public class GameLogic {
     Weapon Dagger = new Weapon("Dagger", 2, 5);
     Messages theMessages = new Messages();
 
+    private boolean entrance = false;
+    private boolean basement = false;
+    private boolean westRoom = false;
+
 
     public GameLogic() {
 
