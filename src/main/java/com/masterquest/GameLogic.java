@@ -1,14 +1,12 @@
 package com.masterquest;
 
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class GameLogic {
 
     private boolean running = true;
     Scanner myObj = new Scanner(System.in);
     Weapon Dagger = new Weapon("Dagger", 2, 5);
-    ArrayList<Weapon> chest = new ArrayList<Weapon>();
     Messages theMessages = new Messages();
 
 
@@ -18,16 +16,19 @@ public class GameLogic {
 
     public void startGame() {
         while (running) {
+
+            theMessages.printIntro();
+            System.out.println("MASTER QUEST");
+            System.out.println("- - - - - - - - - - - - - - -");
+            System.out.println("- - - - - - - - - - - - - - -");
+
             System.out.println("Hello there!");
-            System.out.println("What is your hero name?");
+            System.out.println("What is your name hero?");
 
             String heroName = myObj.nextLine();
             
 
-            if (heroName.equals("q")) {
-                break;
-                
-            }
+            
 
             Hero myHero = new Hero(heroName);
             myHero.addHeroWeapon(Dagger);
@@ -72,7 +73,7 @@ public class GameLogic {
             System.out.println("You are fresh out of the hero academy " + heroName);
             myHero.printHeroHealth();
             myHero.printAllHeroWeapons();
-            myHero.printAllKeys();
+            
 
             theMessages.printEntrance();
             
