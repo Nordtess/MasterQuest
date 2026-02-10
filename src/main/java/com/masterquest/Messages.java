@@ -4,7 +4,17 @@ public class Messages {
 
 
     public Messages() {
-        
+
+    }
+
+    public void printHelp() {
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("The following tips will help you along your journey");
+        System.out.println("Enter 'Weapons' to show your weapons" );
+        System.out.println("Enter 'Keys' to show the keys you are carrying");
+        System.out.println("Enter 'Health' to show your current health");
+        System.out.println("Enter 'Quit' whenever you are done adventuring");
     }
 
 
@@ -20,5 +30,7 @@ public class Messages {
         System.out.println("Where are you going?");
         System.out.println("East/North/West:");
     }
+
+    
     
 }

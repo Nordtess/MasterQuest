@@ -8,4 +8,8 @@ public class Key {
         this.id = id;
     }
 
+    public void printKeyInfo () {
+        System.out.println(id);
+    }
+
 }

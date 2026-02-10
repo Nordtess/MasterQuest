@@ -32,6 +32,27 @@ public class Hero {
             theWeapon.printWeaponInfo();
         }
     }
+
+    public void swingWeapon(Weapon theWeapon) {
+        theWeapon.doDamage();
+    }
+
+
+    public void addKey (Key theKey) {
+        keys.add(theKey);
+    }
+
+    public void printAllKeys() {
+        if (keys.isEmpty()) {
+            System.out.println("You currently have no keys");
+        } else {
+            System.out.println("You currently have the following keys:");
+            for (Key theKey : keys) {
+                theKey.printKeyInfo();
+            }
+        }
+    }
+        
     
 
 }
