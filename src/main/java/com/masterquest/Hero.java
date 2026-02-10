@@ -27,6 +27,7 @@ public class Hero {
     }
 
     public void printAllHeroWeapons() {
+        System.out.println("Your current weapons are: ");
         for (Weapon theWeapon : weapons) {
             theWeapon.printWeaponInfo();
         }

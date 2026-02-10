@@ -69,6 +69,10 @@ public class GameLogic {
                 continue;
             }
 
+            System.out.println("You are fresh out of the hero academy " + heroName);
+            myHero.printHeroHealth();
+            myHero.printAllHeroWeapons();
+
             theMessages.printEntrance();
             
             
