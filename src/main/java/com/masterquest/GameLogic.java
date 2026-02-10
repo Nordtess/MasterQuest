@@ -50,8 +50,7 @@ public class GameLogic {
             
             System.out.println("- - - - - - - - - - - - - - -");
             System.out.println("- - - - - - - - - - - - - - -");
-            System.out.println("Hello there!");
-            System.out.println("What is your name hero?");
+            System.out.println("What is your name brave hero?");
 
             String heroName = myObj.nextLine();
             
