@@ -52,6 +52,15 @@ public class Hero {
             }
         }
     }
+
+    public void heroAttack() {
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("What weapon will you use against the enemy, hero?");
+        printAllHeroWeapons();
+        
+        
+    }
         
     
 
