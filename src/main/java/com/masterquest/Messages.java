@@ -66,6 +66,60 @@ public class Messages {
         System.out.println("East/North/West:");
     }
 
+    public void printEntranceBack () {
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("Once again you are back at the entrance");
+        System.out.println("Where are you going?");
+        System.out.println("East/North/West:");
+    }
+
+    public void westRoom() {
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("You enter the room to the west of the entrance");
+        System.out.println("There is no one inside, or something inside");
+        System.out.println("A layer of dust covers the floor and on the right wall there is a curious painting");
+        System.out.println("When you go forward to the painting somehow it speaks to you queitly");
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("Answer my question correct and you will get something for it");
+        System.out.println("Answer it wrong and pay with your life force");
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("I am a light for the night, but I have no fire. I am a circle, yet I am often only a crescent. I die every month, yet I am born again. What am I?");
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("What is your answer hero of humanity?");
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("The sun");
+        System.out.println("A firefly");
+        System.out.println("The moon");
+        System.out.println("- - - - - - - - - - - - - - -");
+
+
+    }
+
+
+
+    public void eastRoom() {
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("You enter the basement and in the corner you see a chest in a dim light");
+        System.out.println("Before you stand a growling goblin in an icy type of armor");
+        System.out.println("He drewls while looking at you with his bright red eyes of doom");
+        System.out.println("This is a battle you can't run from hero");
+        System.out.println("Get ready!");
+
+    }
+
+    public void eastRoomRevisit() {
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("You once again enter the basement");
+        System.out.println("The chest is already looted");
+        System.out.println("And the goblin lays dead on the floor");
+        System.out.println("There is nothing more for you here");
+        
+    }
+
     
     
 }

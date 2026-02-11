@@ -12,6 +12,7 @@ public class GameLogic {
     private boolean entrance = false;
     private boolean basement = false;
     private boolean westRoom = false;
+    private boolean northRoom = false;
 
 
     public GameLogic() {
@@ -107,6 +108,34 @@ public class GameLogic {
             
 
             theMessages.printEntrance();
+
+            String floorDirection = myObj.nextLine();
+            String floorDirection2 = floorDirection.toLowerCase();
+
+            boolean floorOne = true;
+            while (floorOne) {
+                switch (floorDirection2) {
+                    case "east":
+                        if (!basement) {
+                            this.basement = true;
+                            theMessages.eastRoom();
+                            System.out.println("- - - - - - - - - - - - - - -");
+                            System.out.println("- - - - - - - - - - - - - - -");
+                            System.out.println("What weapon will you use against the enemy, hero?");
+                            myHero.printAllHeroWeapons();
+                            String weaponChoice = myObj.nextLine();
+                            String weaponChoiceLow = weaponChoice.toLowerCase();
+
+
+                        } else {
+                            theMessages.eastRoomRevisit();
+                            theMessages.printEntranceBack();
+                            floorOne = false;
+                            
+                        }
+
+                }
+            }
             
             
             
