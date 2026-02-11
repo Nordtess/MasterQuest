@@ -1,15 +1,18 @@
 package com.masterquest;
 
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class GameLogic {
 
     private boolean running = true;
     Scanner myObj = new Scanner(System.in);
     Weapon Dagger = new Weapon("Dagger", 2, 5);
-    ArrayList<Weapon> chest = new ArrayList<Weapon>();
     Messages theMessages = new Messages();
+
+    private boolean entrance = false;
+    private boolean basement = false;
+    private boolean westRoom = false;
+    private boolean northRoom = false;
 
 
     public GameLogic() {
@@ -18,16 +21,46 @@ public class GameLogic {
 
     public void startGame() {
         while (running) {
-            System.out.println("Hello there!");
-            System.out.println("What is your hero name?");
+
+            theMessages.printIntro();
+            System.out.println("MASTER QUEST");
+            System.out.println("- - - - - - - - - - - - - - -");
+            System.out.println("- - - - - - - - - - - - - - -");
+
+            
+
+            boolean helpRules = true;
+            while (helpRules) {
+                theMessages.printHelp();
+                System.out.println("- - - - - - - - - - - - - - -");
+                System.out.println("Do you understand everything? (yes/no):");
+                String answer = myObj.nextLine();
+                String answer2 = answer.toLowerCase();
+
+                switch (answer2) {
+                    case "yes":
+                        helpRules = false;
+                        break;
+                    case "no":
+                        break;
+                    default:
+                        System.out.println("Please enter yes or no");
+                        answer2 = myObj.nextLine();
+                        break;
+                }
+                
+
+            }
+
+            
+            System.out.println("- - - - - - - - - - - - - - -");
+            System.out.println("- - - - - - - - - - - - - - -");
+            System.out.println("What is your name brave hero?");
 
             String heroName = myObj.nextLine();
             
 
-            if (heroName.equals("q")) {
-                break;
-                
-            }
+            
 
             Hero myHero = new Hero(heroName);
             myHero.addHeroWeapon(Dagger);
@@ -72,9 +105,37 @@ public class GameLogic {
             System.out.println("You are fresh out of the hero academy " + heroName);
             myHero.printHeroHealth();
             myHero.printAllHeroWeapons();
-            myHero.printAllKeys();
+            
 
             theMessages.printEntrance();
+
+            String floorDirection = myObj.nextLine();
+            String floorDirection2 = floorDirection.toLowerCase();
+
+            boolean floorOne = true;
+            while (floorOne) {
+                switch (floorDirection2) {
+                    case "east":
+                        if (!basement) {
+                            this.basement = true;
+                            theMessages.eastRoom();
+                            System.out.println("- - - - - - - - - - - - - - -");
+                            System.out.println("- - - - - - - - - - - - - - -");
+                            System.out.println("What weapon will you use against the enemy, hero?");
+                            myHero.printAllHeroWeapons();
+                            String weaponChoice = myObj.nextLine();
+                            String weaponChoiceLow = weaponChoice.toLowerCase();
+
+
+                        } else {
+                            theMessages.eastRoomRevisit();
+                            theMessages.printEntranceBack();
+                            floorOne = false;
+                            
+                        }
+
+                }
+            }
             
             
             
