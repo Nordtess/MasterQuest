@@ -123,11 +123,11 @@ public class GameLogic {
                             System.out.println("- - - - - - - - - - - - - - -");
                             System.out.println("- - - - - - - - - - - - - - -");
                             System.out.println("What weapon will you use against the enemy, hero?");
-                            myHero.printAllHeroWeapons();
-                            String weaponChoice = myObj.nextLine();
-                            String weaponChoiceLow = weaponChoice.toLowerCase();
 
-                            myHero.enemyDamage(theGoblin, Dagger);
+                            myHero.heroDamage(theGoblin, "");
+                            myHero.nextTurn();
+                            theGoblin.enemyDamage(myHero);
+                            myHero.nextTurn();
 
 
 
