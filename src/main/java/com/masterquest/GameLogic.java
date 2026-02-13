@@ -8,6 +8,7 @@ public class GameLogic {
     Scanner myObj = new Scanner(System.in);
     Weapon Dagger = new Weapon("Dagger", 2, 5);
     Messages theMessages = new Messages();
+    Goblin theGoblin = new Goblin("Azak", 100);
 
     private boolean entrance = false;
     private boolean basement = false;
@@ -125,6 +126,9 @@ public class GameLogic {
                             myHero.printAllHeroWeapons();
                             String weaponChoice = myObj.nextLine();
                             String weaponChoiceLow = weaponChoice.toLowerCase();
+
+                            myHero.enemyDamage(theGoblin, Dagger);
+
 
 
                         } else {

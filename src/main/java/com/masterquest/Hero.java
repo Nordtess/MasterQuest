@@ -1,12 +1,15 @@
 package com.masterquest;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Hero {
     private String name;
-    private int health;
+    protected int health;
     ArrayList<Weapon> weapons = new ArrayList<Weapon>();
     ArrayList<Key> keys = new ArrayList<Key>();
+
+    Scanner r = new Scanner(System.in);
 
     public Hero(String name) {
         this.name = name;
@@ -53,15 +56,46 @@ public class Hero {
         }
     }
 
+
+    public void enemyDamage(Enemy theEnemy, Weapon theWeapon) {
+        int totalDamage = theWeapon.doDamage();
+        theEnemy.health -= totalDamage;
+        System.out.println("The " + theEnemy.name + " takes " + totalDamage + " damage!");
+        System.out.println("The " + theEnemy.name + " has " + theEnemy.health + " health left!");
+    }
+
     public void heroAttack() {
-        System.out.println("- - - - - - - - - - - - - - -");
-        System.out.println("- - - - - - - - - - - - - - -");
-        System.out.println("What weapon will you use against the enemy, hero?");
-        printAllHeroWeapons();
+        int attacks = 0;
+        while (true) { 
+            if (this.health > 0) {
+                switch (attacks) {
+                case 0:
+                    System.out.println("- - - - - - - - - - - - - - -");
+                    System.out.println("- - - - - - - - - - - - - - -");
+                    System.out.println("What weapon will you use against the enemy, hero?");
+                    printAllHeroWeapons();
+                    String weaponName = r.nextLine();
+                    String weaponNameLow = weaponName.toLowerCase();
+
+                    for (Weapon theWeapon : weapons) {
+                        if (theWeapon.printWeaponId().equals(weaponNameLow)) {
+                            swingWeapon(theWeapon);
+                             
+                        }
+                    }
+
+            }
+
+            }
+            
+        }
+        
+
         
         
     }
         
     
+
 
 }

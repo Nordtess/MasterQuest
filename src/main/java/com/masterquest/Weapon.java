@@ -26,6 +26,10 @@ public class Weapon {
         return result;
     }
 
+    public String printWeaponId () {
+        return this.id;
+    }
+
 
 
 }
