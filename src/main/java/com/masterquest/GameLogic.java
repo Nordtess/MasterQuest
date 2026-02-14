@@ -9,6 +9,7 @@ public class GameLogic {
     Weapon Dagger = new Weapon("Dagger", 2, 5);
     Messages theMessages = new Messages();
     Goblin theGoblin = new Goblin("Azak", 100);
+    Key keyOne = new Key("keyOne");
 
     private boolean entrance = false;
     private boolean basement = false;
@@ -139,9 +140,16 @@ public class GameLogic {
                                 if (myHero.health <= 0) {
                                     System.out.println("My champion your life force is fading away, your health is " + myHero.health);
                                     System.out.println("Humanity is doomed!");
+                                    running = false; // End the game
+                                    floorOne = false; // Exit floor loop
                                     break; // Hero defeated
                                 }
                                 myHero.nextTurn();
+                            }
+                            
+                            // If hero died, exit this case
+                            if (!running) {
+                                break;
                             }
 
                             System.out.println("The goblin is laying dead on the floor, the chest is yours.");
@@ -162,59 +170,61 @@ public class GameLogic {
                         case "west":
                             if(!westRoom) {
                                 theMessages.westRoom();
-                                String answer = myObj.nextLine().toLowerCase();
                                 westRoom = true;
+                                
+                                boolean riddleAnswered = false;
+                                while (!riddleAnswered && myHero.health > 0) {
+                                    String answer = myObj.nextLine().toLowerCase();
+                                    
+                                    switch (answer) {
+                                        case "the sun":
+                                        case "a firefly":
+                                            System.out.println("The answer is wrong, you will pay for this");
+                                            myHero.health -= 100;
+                                            System.out.println("You feel a mysterious force taking your life force away");
+                                            System.out.println("You die champion and we are all doomed");
+                                            running = false; // End the game
+                                            floorOne = false; // Exit floor loop
+                                            riddleAnswered = true;
+                                            break;
 
-                                switch (answer) {
-                                    case "the sun":
-                                        System.out.println("The answer is wrong, you will pay for this");
-                                        myHero.health -= 100;
-                                        System.out.println("You feel a mysterious force taking your life force away");
-                                        System.out.println("You die champion and we are all doomed");
-                                        break;
+                                        case "the moon":
+                                            System.out.println("You are correct champion");
+                                            System.out.println("From magic you can't explain you feel something appearing in your pocket");
+                                            System.out.println("It is a key. Where will it go? You move back to the entrance");
+                                            riddleAnswered = true;
+                                            myHero.addKey(keyOne);
+                                            break;
 
-
-                                    case "a firefly":
-                                        System.out.println("The answer is wrong, you will pay for this");
-                                        myHero.health -= 100;
-                                        System.out.println("You feel a mysterious force taking your life force away");
-                                        System.out.println("You die champion and we are all doomed");
-                                        break;
-
-                                    case "the moon":
-                                        System.out.println("You are correct champion");
-                                        System.out.println("From magic you can't explain you feel something appearing in your pocket");
-                                        System.out.println("It is a key. Where will it go? You move back to the entrance");
-
-
-                                    default:
-                                        System.out.println("Please enter one of the answers champion");
-                                        
-                                        
-                                } if (westRoom) {
+                                        default:
+                                            System.out.println("Please enter one of the answers champion");
+                                            break;
+                                    }
+                                }
+                                
+                                if (westRoom && myHero.health > 0) {
                                     theMessages.westRoomBack();
                                     theMessages.printEntranceBack();
                                 }
-
-                                }
-
-
+                            } else {
+                                System.out.println("You have already visited this room.");
+                                theMessages.printEntranceBack();
                             }
+                            break;
 
 
 
 
+                    }
                 }
+                
+                
+                
+    
             }
-            
-            
-            
-
-            
-
         }
     }
 
-}
+
 
 
