@@ -232,6 +232,42 @@ public class Messages {
         System.out.println("There is nothing more for you here");
     }
 
+    public void finalBossRoom() {
+        System.out.println("\n╔════════════════════════════════════════════════════════════════════╗");
+        System.out.println("║              THE THRONE OF ETERNAL DARKNESS                        ║");
+        System.out.println("╚════════════════════════════════════════════════════════════════════╝\n");
+        
+        System.out.println("You ascend the northern staircase, each step echoing like a death knell.");
+        System.out.println("The air grows impossibly cold, your breath forming ice crystals that");
+        System.out.println("fall like snow before your eyes.");
+        System.out.println();
+        System.out.println("At the top, massive obsidian doors stand before you, carved with");
+        System.out.println("scenes of ancient battles and fallen heroes. They swing open");
+        System.out.println("with a deafening groan, revealing the chamber beyond.");
+        System.out.println();
+        System.out.println("The throne room stretches impossibly vast. Pillars of black marble");
+        System.out.println("rise into darkness above, while rivers of shadow flow across the floor");
+        System.out.println("like living darkness. At the far end, upon a throne wrought from");
+        System.out.println("the bones of a thousand warriors, sits a figure cloaked in absolute void.");
+        System.out.println();
+        System.out.println("The LORD OF SHADOW rises slowly, darkness cascading from his form");
+        System.out.println("like a waterfall of night. Two crimson eyes ignite in the depths of");
+        System.out.println("his hood, burning with malevolent intelligence. When he speaks,");
+        System.out.println("reality itself seems to shudder:");
+        System.out.println();
+        System.out.println("\"So... another fool seeks their doom in my domain.\"");
+        System.out.println("\"I have ended ten thousand lives in this chamber.\"");
+        System.out.println("\"Yours will be no different.\"");
+        System.out.println();
+        System.out.println("The shadows around him coalesce into a blade of pure darkness.");
+        System.out.println("The temperature plummets. The very light seems to die around him.");
+        System.out.println();
+        System.out.println("This is the moment everything has led to.");
+        System.out.println("Victory or oblivion. There is no retreat.");
+        System.out.println();
+        System.out.println("⚔️  THE FINAL BATTLE BEGINS  ⚔️");
+    }
+
 
 
 

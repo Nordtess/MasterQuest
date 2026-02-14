@@ -13,6 +13,7 @@ public class GameLogic {
     Messages theMessages = new Messages();
     Goblin theGoblin = new Goblin("Azak", 100);
     Firedemon theFiredemon = new Firedemon("Banzkar", 300);
+    FinalBoss theBoss = new FinalBoss("Lord of shadows", 1000);
     Key keyOne = new Key("keyOne");
 
     private boolean entrance = false;
