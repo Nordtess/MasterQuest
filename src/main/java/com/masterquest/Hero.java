@@ -63,6 +63,26 @@ public class Hero {
         
     }
 
+
+    public void continueNext() {
+        System.out.println("Enter 'c' to continue");
+        while (true) {
+            String turn = r.nextLine().toLowerCase();
+            boolean ready = true;
+            if (turn.toLowerCase().equals("c")) {
+                System.out.println("- - - - - - - - - - - - - - -");
+                System.out.println("- - - - - - - - - - - - - - -");
+                ready = false;
+                break;
+            } else {
+                System.out.println("- - - - - - - - - - - - - - -");
+                System.out.println("- - - - - - - - - - - - - - -");
+                System.out.println("Please enter 'c' when ready champion");
+            }
+        }
+        
+    }
+
     public void printAllKeys() {
         if (keys.isEmpty()) {
             System.out.println("You currently have no keys");
