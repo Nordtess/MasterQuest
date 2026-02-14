@@ -338,6 +338,38 @@ public class Messages {
         System.out.println("╚════════════════════════════════════════════════════════════════════╝\n");
     }
 
+    public void finalBossDefeat() {
+        System.out.println("\n╔════════════════════════════════════════════════════════════════════╗");
+        System.out.println("║                         DARKNESS ETERNAL                           ║");
+        System.out.println("╚════════════════════════════════════════════════════════════════════╝\n");
+        
+        System.out.println("Your weapon clatters to the cold stone floor.");
+        System.out.println();
+        System.out.println("The Lord of Shadow stands over you, his blade dripping with your blood.");
+        System.out.println("Those crimson eyes burn with ancient triumph as he watches you fall.");
+        System.out.println();
+        System.out.println("\"Ten thousand and one,\" he whispers, his voice like ice cracking.");
+        System.out.println("\"You were... insufficient.\"");
+        System.out.println();
+        System.out.println("Darkness floods your vision. The cold consumes you.");
+        System.out.println("Your last thought is of the world above—now doomed to eternal shadow.");
+        System.out.println();
+        System.out.println("As your life fades, you hear the Lord of Shadow ascending his throne once more,");
+        System.out.println("settling in to wait for the next foolish hero who dares challenge the darkness.");
+        System.out.println();
+        System.out.println("The world will never know how close it came to salvation.");
+        System.out.println();
+        System.out.println("═══════════════════════════════════════════════════════════════════");
+        System.out.println();
+        System.out.println("The shadow spreads.");
+        System.out.println("The tyrant endures.");
+        System.out.println("Hope dies.");
+        System.out.println();
+        System.out.println("╔════════════════════════════════════════════════════════════════════╗");
+        System.out.println("║                    GAME OVER                                       ║");
+        System.out.println("╚════════════════════════════════════════════════════════════════════╝\n");
+    }
+
 
 
 

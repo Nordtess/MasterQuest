@@ -496,15 +496,49 @@ public class GameLogic {
                                             
                                         case "north":
                                             if (upperNorthGate) {
+                                                theMessages.finalBossRoom();
                                                 System.out.println("- - - - - - - - - - - - - - -");
-                                                System.out.println("The northern staircase now stands open, its mystical chains shattered");
-                                                System.out.println("Dark energy pulses from the passage above");
-                                                System.out.println("The final confrontation awaits you beyond...");
-                                                System.out.println("Are you prepared for what lies ahead?");
                                                 System.out.println("- - - - - - - - - - - - - - -");
-                                                myHero.continueNext();
-                                                // TODO: Add final boss room logic here
-                                                theMessages.upperRoomRevisitWithStatue();
+                                                System.out.println("What weapon will you use against the Lord of Shadow, hero?");
+
+                                                // Combat loop - continues until hero or final boss is defeated
+                                                while (myHero.health > 0 && theBoss.health > 0) {
+                                                    int bossHealthBefore = theBoss.health;
+                                                    
+                                                    myHero.heroDamage(theBoss, "");
+                                                    
+                                                    // If player has angel buff, make the attack deal 500 damage total
+                                                    if (angelBuff) {
+                                                        int normalDamage = bossHealthBefore - theBoss.health;
+                                                        int additionalDamage = 500 - normalDamage;
+                                                        theBoss.health -= additionalDamage;
+                                                        System.out.println("The blessing of the four elements surges through your strike!");
+                                                        System.out.println("Your attack deals an additional " + additionalDamage + " divine damage!");
+                                                        System.out.println(theBoss.name + " now has " + theBoss.health + " health remaining!");
+                                                    }
+                                                    
+                                                    if (theBoss.health <= 0) {
+                                                        System.out.println("- - - - - - - - - - - - - - -");
+                                                        System.out.println("- - - - - - - - - - - - - - -");
+                                                        theMessages.Outro();
+                                                        running = false;
+                                                        floorOne = false;
+                                                        upperFloorActive = false;
+                                                        break; // Boss defeated - game won!
+                                                    }
+                                                    myHero.nextTurn();
+                                                    
+                                                    theBoss.enemyDamage(myHero);
+                                                    if (myHero.health <= 0) {
+                                                        System.out.println("- - - - - - - - - - - - - - -");
+                                                        theMessages.finalBossDefeat();
+                                                        running = false;
+                                                        floorOne = false;
+                                                        upperFloorActive = false;
+                                                        break; // Hero defeated - game over
+                                                    }
+                                                    myHero.nextTurn();
+                                                }
                                             } else {
                                                 System.out.println("- - - - - - - - - - - - - - -");
                                                 System.out.println("The grand northern staircase beckons upward into shadow");
