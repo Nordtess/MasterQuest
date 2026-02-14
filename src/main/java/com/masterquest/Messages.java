@@ -61,8 +61,11 @@ public class Messages {
         System.out.println("There is no going back now");
         System.out.println("To the east you have a basement");
         System.out.println("To the north you have a staircase leading up");
+        System.out.println("The northern staircase is blocked by a metal gate");
         System.out.println("To the west you have a door leading into a room");
         System.out.println("Where are you going?");
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("- - - - - - - - - - - - - - -");
         System.out.println("East/North/West:");
     }
 
@@ -96,7 +99,14 @@ public class Messages {
 
 
     }
-
+    
+    public void westRoomBack() {
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("You have already been in here champion!");
+        System.out.println("There is nothing more for you here");
+        System.out.println("You move back to the entrance");
+    }
 
 
     public void eastRoom() {
