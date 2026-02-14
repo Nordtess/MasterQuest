@@ -8,6 +8,7 @@ public class Hero {
     protected int health;
     ArrayList<Weapon> weapons = new ArrayList<Weapon>();
     ArrayList<Key> keys = new ArrayList<Key>();
+    public String lastWeaponUsed = "";
 
     Scanner r = new Scanner(System.in);
 
@@ -108,6 +109,7 @@ public class Hero {
                 if (choosenWeaponLowerCase.equals(wep.printWeaponId().toLowerCase())) {
                     totalDamage = wep.doDamage();
                     theEnemy.health -= totalDamage;
+                    lastWeaponUsed = wep.printWeaponId();
                     System.out.println("- - - - - - - - - - - - - - -");
                     System.out.println("- - - - - - - - - - - - - - -");
                     System.out.println(theEnemy.name + " takes " + totalDamage + " damage!");

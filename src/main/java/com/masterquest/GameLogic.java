@@ -23,6 +23,8 @@ public class GameLogic {
     private boolean upperWestRoom = false;
     private boolean upperEastRoom = false;
     private boolean angelBuff = false;
+    private boolean upperNorthGate = false;
+    private int holyHymnUsesAgainstDemon = 0;
 
 
     public GameLogic() {
@@ -323,7 +325,11 @@ public class GameLogic {
                                     upperFloor = true;
                                     theMessages.upperRoom();
                                 } else {
-                                    theMessages.upperRoomRevisit();
+                                    if (upperNorthGate) {
+                                        theMessages.upperRoomRevisitWithStatue();
+                                    } else {
+                                        theMessages.upperRoomRevisit();
+                                    }
                                 }
                                 
                                 String upperFloorDirection = myObj.nextLine().toLowerCase();
@@ -372,7 +378,11 @@ public class GameLogic {
                                                             myHero.weapons.removeIf(weapon -> weapon.printWeaponId().equalsIgnoreCase("Fireball"));
                                                             System.out.println("The Fireball spell fades away, replaced by the superior HolyHymn.");
                                                             System.out.println("- - - - - - - - - - - - - - -");
-                                                            theMessages.upperRoomRevisit();
+                                                            if (upperNorthGate) {
+                                                                theMessages.upperRoomRevisitWithStatue();
+                                                            } else {
+                                                                theMessages.upperRoomRevisit();
+                                                            }
                                                             break;
                                                             
                                                         default:
@@ -383,7 +393,11 @@ public class GameLogic {
                                             } else {
                                                 theMessages.upperWestRoomRevisit();
                                                 myHero.continueNext();
-                                                theMessages.upperRoomRevisit();
+                                                if (upperNorthGate) {
+                                                    theMessages.upperRoomRevisitWithStatue();
+                                                } else {
+                                                    theMessages.upperRoomRevisit();
+                                                }
                                             }
                                             break;
                                             
@@ -398,6 +412,21 @@ public class GameLogic {
                                                 // Combat loop - continues until hero or firedemon is defeated
                                                 while (myHero.health > 0 && theFiredemon.health > 0) {
                                                     myHero.heroDamage(theFiredemon, "");
+                                                    
+                                                    // Check if HolyHymn was used and track usage
+                                                    if (myHero.lastWeaponUsed.equalsIgnoreCase("HolyHymn")) {
+                                                        holyHymnUsesAgainstDemon++;
+                                                        if (holyHymnUsesAgainstDemon >= 2) {
+                                                            System.out.println("- - - - - - - - - - - - - - -");
+                                                            System.out.println("The HolyHymn's divine power flickers and fades!");
+                                                            System.out.println("Its sacred energy has been exhausted against this demon");
+                                                            System.out.println("The weapon crumbles to dust in your hands");
+                                                            System.out.println("The HolyHymn has been removed from your arsenal");
+                                                            myHero.weapons.removeIf(weapon -> weapon.printWeaponId().equalsIgnoreCase("HolyHymn"));
+                                                            System.out.println("- - - - - - - - - - - - - - -");
+                                                        }
+                                                    }
+                                                    
                                                     if (theFiredemon.health <= 0) {
                                                         System.out.println("- - - - - - - - - - - - - - -");
                                                         System.out.println("- - - - - - - - - - - - - - -");
@@ -433,6 +462,11 @@ public class GameLogic {
                                                 }
 
                                                 // Firedemon defeated
+                                                upperNorthGate = true;
+                                                System.out.println("- - - - - - - - - - - - - - -");
+                                                System.out.println("A deep rumbling shakes the very foundation of the dungeon");
+                                                System.out.println("The mystical chains on the northern staircase shatter with a resounding crack!");
+                                                System.out.println("The path to the final confrontation now lies open before you");
                                                 System.out.println("- - - - - - - - - - - - - - -");
                                                 System.out.println("As the demon's ashes settle, something catches your eye");
                                                 System.out.println("Etched into the scorched floor are mysterious words:");
@@ -442,25 +476,45 @@ public class GameLogic {
                                                 System.out.println("Perhaps the glowing angel statue holds the answer...");
                                                 System.out.println("- - - - - - - - - - - - - - -");
                                                 myHero.continueNext();
-                                                theMessages.upperRoomRevisit();
+                                                if (upperNorthGate) {
+                                                    theMessages.upperRoomRevisitWithStatue();
+                                                } else {
+                                                    theMessages.upperRoomRevisit();
+                                                }
                                                 
                                             } else {
                                                 theMessages.upperEastRoomRevisit();
                                                 myHero.continueNext();
-                                                theMessages.upperRoomRevisit();
+                                                if (upperNorthGate) {
+                                                    theMessages.upperRoomRevisitWithStatue();
+                                                } else {
+                                                    theMessages.upperRoomRevisit();
+                                                }
                                             }
                                             break;
                                             
                                         case "north":
-                                            System.out.println("- - - - - - - - - - - - - - -");
-                                            System.out.println("The grand northern staircase beckons upward into shadow");
-                                            System.out.println("But mystical chains forged of pure energy still bar your passage");
-                                            System.out.println("Ancient runes glow along their ethereal links");
-                                            System.out.println("The guardian of this floor must be defeated first");
-                                            System.out.println("Only then will the seals break");
-                                            System.out.println("- - - - - - - - - - - - - - -");
-                                            myHero.continueNext();
-                                            theMessages.upperRoomRevisit();
+                                            if (upperNorthGate) {
+                                                System.out.println("- - - - - - - - - - - - - - -");
+                                                System.out.println("The northern staircase now stands open, its mystical chains shattered");
+                                                System.out.println("Dark energy pulses from the passage above");
+                                                System.out.println("The final confrontation awaits you beyond...");
+                                                System.out.println("Are you prepared for what lies ahead?");
+                                                System.out.println("- - - - - - - - - - - - - - -");
+                                                myHero.continueNext();
+                                                // TODO: Add final boss room logic here
+                                                theMessages.upperRoomRevisitWithStatue();
+                                            } else {
+                                                System.out.println("- - - - - - - - - - - - - - -");
+                                                System.out.println("The grand northern staircase beckons upward into shadow");
+                                                System.out.println("But mystical chains forged of pure energy still bar your passage");
+                                                System.out.println("Ancient runes glow along their ethereal links");
+                                                System.out.println("The guardian of this floor must be defeated first");
+                                                System.out.println("Only then will the seals break");
+                                                System.out.println("- - - - - - - - - - - - - - -");
+                                                myHero.continueNext();
+                                                theMessages.upperRoomRevisit();
+                                            }
                                             break;
                                             
                                         case "statue":
@@ -485,9 +539,10 @@ public class GameLogic {
                                                     System.out.println("Celestial power flows through you like a raging river");
                                                     System.out.println("Fire, Earth, Air, and Water - the four elements unite within your soul!");
                                                     System.out.println("You feel your very essence empowered by their ancient harmony!");
+                                                    System.out.println("Divine healing energy washes over you, mending all wounds!");
                                                     angelBuff = true;
-                                                    myHero.health += 50;
-                                                    System.out.println("Your maximum vitality surges! Health: " + myHero.health);
+                                                    myHero.health = 200;
+                                                    System.out.println("Your vitality surges to its absolute peak! Health: " + myHero.health);
                                                     System.out.println("The blessing of the elements courses through your veins");
                                                     System.out.println("You are now truly prepared to face the ultimate evil!");
                                                     System.out.println("- - - - - - - - - - - - - - -");
@@ -500,7 +555,11 @@ public class GameLogic {
                                                     System.out.println("- - - - - - - - - - - - - - -");
                                                 }
                                                 myHero.continueNext();
-                                                theMessages.upperRoomRevisit();
+                                                if (upperNorthGate) {
+                                                    theMessages.upperRoomRevisitWithStatue();
+                                                } else {
+                                                    theMessages.upperRoomRevisit();
+                                                }
                                             } else if (angelBuff) {
                                                 System.out.println("- - - - - - - - - - - - - - -");
                                                 System.out.println("The angel statue radiates warmth and approval");
@@ -508,7 +567,11 @@ public class GameLogic {
                                                 System.out.println("You feel the power of the four elements pulsing in harmony");
                                                 System.out.println("- - - - - - - - - - - - - - -");
                                                 myHero.continueNext();
-                                                theMessages.upperRoomRevisit();
+                                                if (upperNorthGate) {
+                                                    theMessages.upperRoomRevisitWithStatue();
+                                                } else {
+                                                    theMessages.upperRoomRevisit();
+                                                }
                                             } else {
                                                 System.out.println("- - - - - - - - - - - - - - -");
                                                 System.out.println("You approach the glowing angel statue");
@@ -517,12 +580,20 @@ public class GameLogic {
                                                 System.out.println("Perhaps you need to discover something first...");
                                                 System.out.println("- - - - - - - - - - - - - - -");
                                                 myHero.continueNext();
-                                                theMessages.upperRoomRevisit();
+                                                if (upperNorthGate) {
+                                                    theMessages.upperRoomRevisitWithStatue();
+                                                } else {
+                                                    theMessages.upperRoomRevisit();
+                                                }
                                             }
                                             break;
                                             
                                         default:
-                                            System.out.println("Please enter a valid direction (East/North/West) or 'Statue' to interact:");
+                                            if (upperNorthGate) {
+                                                System.out.println("Please enter a valid direction (East/North/West) or 'Statue' to interact:");
+                                            } else {
+                                                System.out.println("Please enter a valid direction (East/North/West):");
+                                            }
                                             break;
                                     }
                                     

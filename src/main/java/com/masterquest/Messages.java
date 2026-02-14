@@ -165,6 +165,16 @@ public class Messages {
         System.out.println("East/North/West:");
     }
 
+    public void upperRoomRevisitWithStatue() {
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("You stand once more in the upper floor");
+        System.out.println("The angel statue radiates its eternal divine light in the center");
+        System.out.println("The northern path now lies open, freed from its chains");
+        System.out.println("Where are you going?");
+        System.out.println("East/North/West/Statue:");
+    }
+
     public void upperWestRoom() {
         System.out.println("- - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - -");
@@ -216,6 +226,9 @@ public class Messages {
         System.out.println("- - - - - - - - - - - - - - -");
         System.out.println("You return to the eastern chamber");
         System.out.println("The firedemon's ashes smolder on the scorched floor");
+        System.out.println("The mysterious words are still etched into the ground:");
+        System.out.println("'Fire, earth, air....'");
+        System.out.println("The cryptic message lingers in your mind");
         System.out.println("There is nothing more for you here");
     }
 
