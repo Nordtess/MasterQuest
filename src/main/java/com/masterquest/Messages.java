@@ -268,6 +268,75 @@ public class Messages {
         System.out.println("⚔️  THE FINAL BATTLE BEGINS  ⚔️");
     }
 
+    public void Outro() {
+        System.out.println("\n╔════════════════════════════════════════════════════════════════════╗");
+        System.out.println("║                         VICTORY                                    ║");
+        System.out.println("╚════════════════════════════════════════════════════════════════════╝\n");
+        
+        System.out.println("With a final, devastating strike, your blade pierces the darkness.");
+        System.out.println();
+        System.out.println("The Lord of Shadow stumbles backward, his crimson eyes widening in");
+        System.out.println("disbelief. For the first time in eons, he knows fear.");
+        System.out.println();
+        System.out.println("\"Impossible...\" he rasps, his voice no longer thunderous but hollow.");
+        System.out.println("\"I... cannot... fall...\"");
+        System.out.println();
+        System.out.println("His form begins to unravel, shadows peeling away like burning paper.");
+        System.out.println("The darkness that sustained him for millennia dissipates into nothing.");
+        System.out.println("With a final, agonized scream that shakes the very foundations,");
+        System.out.println("the Lord of Shadow dissolves into nothingness.");
+        System.out.println();
+        System.out.println("═══════════════════════════════════════════════════════════════════");
+        System.out.println();
+        System.out.println("The moment he vanishes, everything changes.");
+        System.out.println();
+        System.out.println("Light—true, warm, living light—floods through cracks in the ceiling.");
+        System.out.println("The oppressive cold shatters like ice in spring. The rivers of shadow");
+        System.out.println("evaporate, revealing floors of pristine white marble beneath.");
+        System.out.println();
+        System.out.println("The throne of bones crumbles to dust, and in its place, a single");
+        System.out.println("beam of golden sunlight pierces the darkness. You turn toward it,");
+        System.out.println("feeling its warmth on your face for the first time since entering");
+        System.out.println("this cursed place.");
+        System.out.println();
+        System.out.println("Behind you, the dungeon begins to collapse. Not in violence, but");
+        System.out.println("in peaceful dissolution—its dark purpose fulfilled, its master fallen.");
+        System.out.println("You walk toward the light as the walls fade behind you like a");
+        System.out.println("nightmare giving way to dawn.");
+        System.out.println();
+        System.out.println("═══════════════════════════════════════════════════════════════════");
+        System.out.println();
+        System.out.println("You emerge into a world transformed.");
+        System.out.println();
+        System.out.println("Where once there was only barren wasteland and dying trees,");
+        System.out.println("now flowers bloom. Birds sing. The sky burns brilliant blue,");
+        System.out.println("free from the shadow that had consumed it for generations.");
+        System.out.println();
+        System.out.println("People emerge from hiding, staring in wonder at the sun.");
+        System.out.println("Children laugh. Bells ring in distant villages.");
+        System.out.println();
+        System.out.println("You stand at the entrance of what was once the Masterquest dungeon—");
+        System.out.println("now nothing but a pile of ancient stones, crumbling peacefully");
+        System.out.println("beneath the warm afternoon sun.");
+        System.out.println();
+        System.out.println("═══════════════════════════════════════════════════════════════════");
+        System.out.println();
+        System.out.println("The darkness is broken.");
+        System.out.println("The tyrant is fallen.");
+        System.out.println("The world is free.");
+        System.out.println();
+        System.out.println("And you...");
+        System.out.println();
+        System.out.println("You are the hero who made it possible.");
+        System.out.println();
+        System.out.println("✨ CONGRATULATIONS ✨");
+        System.out.println();
+        System.out.println("You have completed the MASTERQUEST!");
+        System.out.println();
+        System.out.println("╔════════════════════════════════════════════════════════════════════╗");
+        System.out.println("║                    THE END                                         ║");
+        System.out.println("╚════════════════════════════════════════════════════════════════════╝\n");
+    }
 
 
 
