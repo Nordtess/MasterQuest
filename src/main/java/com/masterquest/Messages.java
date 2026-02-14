@@ -45,11 +45,11 @@ public class Messages {
     public void printHelp() {
         System.out.println("- - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - -");
-        System.out.println("The following tips will help you along your journey");
-        System.out.println("Enter 'Weapons' to show your weapons" );
-        System.out.println("Enter 'Keys' to show the keys you are carrying");
-        System.out.println("Enter 'Health' to show your current health");
-        System.out.println("Enter 'Quit' whenever you are done adventuring");
+        System.out.println("Heed these words well, for they shall guide you through the darkness:");
+        System.out.println("Speak 'Weapons' to behold your armaments");
+        System.out.println("Speak 'Keys' to reveal what secrets you carry");
+        System.out.println("Speak 'Health' to know the state of your mortal vessel");
+        System.out.println("Speak 'Quit' should you wish to abandon your quest");
     }
 
 
@@ -57,13 +57,14 @@ public class Messages {
     public void printEntrance() {
         System.out.println("- - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - -");
-        System.out.println("You are standing at the entrance to the dungeon");
-        System.out.println("There is no going back now");
-        System.out.println("To the east you have a basement");
-        System.out.println("To the north you have a staircase leading up");
-        System.out.println("The northern staircase is blocked by a metal gate");
-        System.out.println("To the west you have a door leading into a room");
-        System.out.println("Where are you going?");
+        System.out.println("You stand at the threshold of the ancient dungeon");
+        System.out.println("The entrance seals behind you with a resounding echo");
+        System.out.println("There is no turning back now");
+        System.out.println("To the east, stone steps descend into a shadowy basement");
+        System.out.println("To the north, a grand staircase ascends into darkness");
+        System.out.println("The northern path is barred by an imposing metal gate");
+        System.out.println("To the west, a weathered door beckons with mysterious whispers");
+        System.out.println("Which path do you choose, brave hero?");
         System.out.println("- - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - -");
         System.out.println("East/North/West:");
@@ -72,25 +73,29 @@ public class Messages {
     public void printEntranceBack () {
         System.out.println("- - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - -");
-        System.out.println("Once again you are back at the entrance");
-        System.out.println("Where are you going?");
+        System.out.println("Your footsteps echo as you return to the dungeon's entrance hall");
+        System.out.println("The three paths await your decision once more");
         System.out.println("East/North/West:");
     }
 
     public void westRoom() {
         System.out.println("- - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - -");
-        System.out.println("You enter the room to the west of the entrance");
-        System.out.println("There is no one inside, or something inside");
-        System.out.println("A layer of dust covers the floor and on the right wall there is a curious painting");
-        System.out.println("When you go forward to the painting somehow it speaks to you queitly");
+        System.out.println("You push through the western door into a forgotten chamber");
+        System.out.println("The room appears abandoned, untouched by time or intruder");
+        System.out.println("Thick dust blankets the floor like fresh snow");
+        System.out.println("On the right wall hangs a curious painting, its eyes seeming to follow you");
+        System.out.println("As you approach, the painting's lips begin to move");
+        System.out.println("A whisper emanates from the ancient canvas");
         System.out.println("- - - - - - - - - - - - - - -");
-        System.out.println("Answer my question correct and you will get something for it");
-        System.out.println("Answer it wrong and pay with your life force");
+        System.out.println("'Answer my riddle correctly, and power shall be yours'");
+        System.out.println("'Answer wrongly, and your very essence shall be my payment'");
         System.out.println("- - - - - - - - - - - - - - -");
-        System.out.println("I am a light for the night, but I have no fire. I am a circle, yet I am often only a crescent. I die every month, yet I am born again. What am I?");
+        System.out.println("'I am a light for the night, but I have no fire.'");
+        System.out.println("'I am a circle, yet I am often only a crescent.'");
+        System.out.println("'I die every month, yet I am born again. What am I?'");
         System.out.println("- - - - - - - - - - - - - - -");
-        System.out.println("What is your answer hero of humanity?");
+        System.out.println("What is your answer, hero of humanity?");
         System.out.println("- - - - - - - - - - - - - - -");
         System.out.println("The sun");
         System.out.println("A firefly");
@@ -103,30 +108,34 @@ public class Messages {
     public void westRoomBack() {
         System.out.println("- - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - -");
-        System.out.println("You have already been in here champion!");
+        System.out.println("You have already conquered this chamber, champion");
+        System.out.println("The painting now hangs silent, its riddle spent");
         System.out.println("There is nothing more for you here");
-        System.out.println("You move back to the entrance");
+        System.out.println("You turn and make your way back to the entrance");
     }
 
 
     public void eastRoom() {
         System.out.println("- - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - -");
-        System.out.println("You enter the basement and in the corner you see a chest in a dim light");
-        System.out.println("Before you stand a growling goblin in an icy type of armor");
-        System.out.println("He drewls while looking at you with his bright red eyes of doom");
-        System.out.println("This is a battle you can't run from hero");
-        System.out.println("Get ready!");
+        System.out.println("You descend the eastern steps into the musty basement");
+        System.out.println("In the far corner, a chest gleams faintly in the dim torchlight");
+        System.out.println("But between you and your prize stands a menacing figure");
+        System.out.println("A grotesque goblin clad in frost-kissed armor blocks your path");
+        System.out.println("His fangs drip with anticipation as crimson eyes bore into your soul");
+        System.out.println("He lets out a guttural growl that echoes through the chamber");
+        System.out.println("This is a battle from which there is no escape, hero");
+        System.out.println("Steel yourself for combat!");
 
     }
 
     public void eastRoomRevisit() {
         System.out.println("- - - - - - - - - - - - - - -");
         System.out.println("- - - - - - - - - - - - - - -");
-        System.out.println("You once again enter the basement");
-        System.out.println("The chest is already looted");
-        System.out.println("And the goblin lays dead on the floor");
-        System.out.println("There is nothing more for you here");
+        System.out.println("You return to the basement, site of your first victory");
+        System.out.println("The empty chest stands open, its treasures already claimed");
+        System.out.println("The goblin's lifeless form lies crumpled in a frozen heap");
+        System.out.println("There is nothing more for you in this place");
         
     }
 
