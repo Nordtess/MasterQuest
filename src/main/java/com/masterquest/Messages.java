@@ -96,7 +96,14 @@ public class Messages {
 
 
     }
-
+    
+    public void westRoomBack() {
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("- - - - - - - - - - - - - - -");
+        System.out.println("You have already been in here champion!");
+        System.out.println("There is nothing more for you here");
+        System.out.println("You move back to the entrance");
+    }
 
 
     public void eastRoom() {

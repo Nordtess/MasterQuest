@@ -110,12 +110,12 @@ public class GameLogic {
 
             theMessages.printEntrance();
 
-            String floorDirection = myObj.nextLine();
-            String floorDirection2 = floorDirection.toLowerCase();
+            String floorDirection = myObj.nextLine().toLowerCase();
+            
 
             boolean floorOne = true;
             while (floorOne) {
-                switch (floorDirection2) {
+                switch (floorDirection) {
                     case "east":
                         if (!basement) {
                             this.basement = true;
@@ -124,10 +124,31 @@ public class GameLogic {
                             System.out.println("- - - - - - - - - - - - - - -");
                             System.out.println("What weapon will you use against the enemy, hero?");
 
-                            myHero.heroDamage(theGoblin, "");
-                            myHero.nextTurn();
-                            theGoblin.enemyDamage(myHero);
-                            myHero.nextTurn();
+                            // Combat loop - continues until hero or goblin is defeated
+                            while (myHero.health > 0 && theGoblin.health > 0) {
+                                myHero.heroDamage(theGoblin, "");
+                                if (theGoblin.health <= 0) {
+                                    System.out.println("- - - - - - - - - - - - - - -");
+                                    System.out.println("- - - - - - - - - - - - - - -");
+                                    System.out.println("You strike resolut, " + theGoblin.name + " falls to the ground and is defeated!");
+                                    break; // Goblin defeated
+                                }
+                                myHero.nextTurn();
+                                
+                                theGoblin.enemyDamage(myHero);
+                                if (myHero.health <= 0) {
+                                    System.out.println("My champion your life force is fading away, your health is " + myHero.health);
+                                    System.out.println("Humanity is doomed!");
+                                    break; // Hero defeated
+                                }
+                                myHero.nextTurn();
+                            }
+
+                            System.out.println("The goblin is laying dead on the floor, the chest is yours.");
+                            System.out.println("You move forward to the chest and can see it is locked, what is hidden inside it?");
+                            System.out.println("Will you try to open it?");
+
+                            
 
 
 
@@ -137,6 +158,51 @@ public class GameLogic {
                             floorOne = false;
                             
                         }
+
+                        case "west":
+                            if(!westRoom) {
+                                theMessages.westRoom();
+                                String answer = myObj.nextLine().toLowerCase();
+                                westRoom = true;
+
+                                switch (answer) {
+                                    case "the sun":
+                                        System.out.println("The answer is wrong, you will pay for this");
+                                        myHero.health -= 100;
+                                        System.out.println("You feel a mysterious force taking your life force away");
+                                        System.out.println("You die champion and we are all doomed");
+                                        break;
+
+
+                                    case "a firefly":
+                                        System.out.println("The answer is wrong, you will pay for this");
+                                        myHero.health -= 100;
+                                        System.out.println("You feel a mysterious force taking your life force away");
+                                        System.out.println("You die champion and we are all doomed");
+                                        break;
+
+                                    case "the moon":
+                                        System.out.println("You are correct champion");
+                                        System.out.println("From magic you can't explain you feel something appearing in your pocket");
+                                        System.out.println("It is a key. Where will it go? You move back to the entrance");
+
+
+                                    default:
+                                        System.out.println("Please enter one of the answers champion");
+                                        
+                                        
+                                } if (westRoom) {
+                                    theMessages.westRoomBack();
+                                    theMessages.printEntranceBack();
+                                }
+
+                                }
+
+
+                            }
+
+
+
 
                 }
             }
