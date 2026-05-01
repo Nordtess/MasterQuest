@@ -29,11 +29,13 @@ This isn't just a simple text game—it's a showcase of **Object-Oriented Design
 
 ## 🧰 Tech Stack
 
-<p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" height="40" alt="Java" title="Java 21 (The Foundation)"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg" width="40" height="40" alt="Maven" title="Maven (Dependency Management)"/>
-  <img src="https://img.icons8.com/color/48/000000/console.png" width="40" height="40" alt="Terminal" title="Terminal (The Canvas)"/>
-</p>
+<table align="center">
+  <tr>
+    <td align="center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" height="40" alt="Java" /><br/>Java 21</td>
+    <td align="center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg" width="40" height="40" alt="Maven" /><br/>Maven</td>
+    <td align="center"><img src="https://img.icons8.com/color/48/000000/console.png" width="40" height="40" alt="Terminal" /><br/>Terminal</td>
+  </tr>
+</table>
 
 ---
 
